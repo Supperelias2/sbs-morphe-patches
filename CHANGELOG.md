@@ -1,3 +1,9 @@
+## [1.1.0-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.0.0...v1.1.0-dev.1) (2026-09-23)
+
+### ✨ New Features
+
+* add optional direct live TV stream patch ([28a7493](https://github.com/Supperelias2/sbs-morphe-patches/commit/28a7493e2ae277686b80499071dc4de9da547898))
+
 ## 1.0.0 (2026-09-23)
 
 ### ✨ New Features
