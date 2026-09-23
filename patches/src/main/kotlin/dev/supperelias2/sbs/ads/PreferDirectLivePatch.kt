@@ -9,13 +9,13 @@ import app.morphe.patcher.patch.bytecodePatch
 private const val LIVE_ITEM = "Lcom/sbs/ondemand/model/playback/PlaybackResponse\$PlaybackItem;"
 private const val LIVE_AKAMAI = "Lcom/sbs/ondemand/model/playback/PlaybackStreamProvider\$AkamaiHLSProvider;"
 
-/** Opt-in live counterpart; never invents URLs or changes regional access. */
+/** Live counterpart; never invents URLs or changes regional access. */
 @Suppress("unused")
 val preferDirectLivePatch = bytecodePatch(
-    name = "Prefer direct live stream (experimental)",
+    name = "Prefer direct live stream",
     description = "Prefers an available Akamai live stream over Google DAI. " +
         "Broadcast ads remain. Keeps original selection when no direct stream is available.",
-    default = false
+    default = true
 ) {
     compatibleWith(
         Compatibility(
@@ -23,7 +23,7 @@ val preferDirectLivePatch = bytecodePatch(
             packageName = "com.sbs.ondemand.android",
             apkFileType = ApkFileType.APKM,
             appIconColor = 0xDCBD1D,
-            targets = listOf(AppTarget(version = "6.3.0", isExperimental = true))
+            targets = listOf(AppTarget(version = "6.3.0"))
         )
     )
     dependsOn(playbackCompatibilityPatch)

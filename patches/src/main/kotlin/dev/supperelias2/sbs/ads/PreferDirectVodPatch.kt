@@ -12,10 +12,10 @@ private const val AKAMAI = "Lcom/sbs/ondemand/model/playback/PlaybackStreamProvi
 /** Uses only an alternative already supplied by the app's playback service. */
 @Suppress("unused")
 val preferDirectVodPatch = bytecodePatch(
-    name = "Prefer direct VOD stream (experimental)",
+    name = "Prefer direct VOD stream",
     description = "Prefers an available Akamai VOD stream over Google DAI. " +
         "Keeps original selection for live or missing alternatives. Ad removal is not guaranteed.",
-    default = false
+    default = true
 ) {
     compatibleWith(
         Compatibility(
@@ -23,7 +23,7 @@ val preferDirectVodPatch = bytecodePatch(
             packageName = "com.sbs.ondemand.android",
             apkFileType = ApkFileType.APKM,
             appIconColor = 0xDCBD1D,
-            targets = listOf(AppTarget(version = "6.3.0", isExperimental = true))
+            targets = listOf(AppTarget(version = "6.3.0"))
         )
     )
     dependsOn(playbackCompatibilityPatch)

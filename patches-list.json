@@ -1,11 +1,11 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.1.0",
+  "version": "1.2.0-dev.1",
   "patches": [
     {
-      "name": "Prefer direct VOD stream (experimental)",
+      "name": "Prefer direct VOD stream",
       "description": "Prefers an available Akamai VOD stream over Google DAI. Keeps original selection for live or missing alternatives. Ad removal is not guaranteed.",
-      "default": false,
+      "default": true,
       "category": null,
       "dependencies": [
         "BytecodePatch"
@@ -22,7 +22,7 @@
             {
               "version": "6.3.0",
               "versionCodes": null,
-              "isExperimental": true,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -32,9 +32,9 @@
       "options": []
     },
     {
-      "name": "Prefer direct live stream (experimental)",
+      "name": "Prefer direct live stream",
       "description": "Prefers an available Akamai live stream over Google DAI. Broadcast ads remain. Keeps original selection when no direct stream is available.",
-      "default": false,
+      "default": true,
       "category": null,
       "dependencies": [
         "BytecodePatch"
@@ -51,7 +51,7 @@
             {
               "version": "6.3.0",
               "versionCodes": null,
-              "isExperimental": true,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -78,7 +78,7 @@
             {
               "version": "6.3.0",
               "versionCodes": null,
-              "isExperimental": true,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
