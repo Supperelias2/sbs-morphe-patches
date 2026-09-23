@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.1.0...v1.2.0) (2026-09-23)
+
+### ✨ New Features
+
+* promote SBS playback patches to stable ([03d5e61](https://github.com/Supperelias2/sbs-morphe-patches/commit/03d5e616e23c950bdb1e7785e5cd69f475cf0783))
+
 ## [1.2.0-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.1.0...v1.2.0-dev.1) (2026-09-23)
 
 ### ✨ New Features
