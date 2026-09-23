@@ -22,7 +22,7 @@ val playbackCompatibilityPatch = bytecodePatch(
             packageName = "com.sbs.ondemand.android",
             apkFileType = ApkFileType.APKM,
             appIconColor = 0xDCBD1D,
-            targets = listOf(AppTarget(version = "6.3.0", isExperimental = true))
+            targets = listOf(AppTarget(version = "6.3.0"))
         )
     )
 

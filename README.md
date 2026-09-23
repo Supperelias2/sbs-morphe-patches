@@ -8,12 +8,12 @@ Unofficial [Morphe](https://morphe.software) patches for SBS On Demand.
 
 ## What the patches do
 
-**Prefer direct VOD stream (experimental)** selects an Akamai HLS alternative
+**Prefer direct VOD stream** selects an Akamai HLS alternative
 already present in the app's playback response instead of Google DAI. It only
 changes on-demand playback when a non-empty alternative URL is available.
 Live playback and cases without an alternative retain the original selection.
 
-**Prefer direct live stream (experimental)** separately selects an available
+**Prefer direct live stream** separately selects an available
 Akamai HLS alternative for live TV instead of Google DAI. Without a non-empty
 alternative URL it keeps the original selection. Ads in the broadcast itself
 remain; avoiding all additional inserted ads is not guaranteed.
@@ -27,11 +27,10 @@ Location requirements are unchanged.
 
 1. Open the source link above, or add `https://github.com/Supperelias2/sbs-morphe-patches`
    under **Sources → + → Remote**.
-2. Enable **Experimental app versions** for this source. For dev releases,
-   enable **Pre-release patches** as well.
-3. Enable **Expert mode**, select an original SBS 6.3.0 APKM, and select
-   **Prefer direct VOD stream (experimental)** and/or
-   **Prefer direct live stream (experimental)**. The compatibility check is automatic.
+2. Select an original SBS 6.3.0 APKM. Both playback patches are selected by
+   default; you can disable either one if you only want VOD or live changes.
+   The compatibility check is automatic.
+3. For development releases, enable **Pre-release patches** for this source.
 4. Patch and install using Morphe Manager. A signature conflict with the official
    app may require uninstalling that app, which removes its local data/downloads.
 5. Keep Morphe's signing key for future updates. Test start, resume, seeking,

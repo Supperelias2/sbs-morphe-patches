@@ -99,5 +99,6 @@ sharing. Do not clear the global device log buffer. No device logs collected yet
 
 The user subsequently reported that the live test works and authorized release.
 Device details and channel-by-channel coverage were not supplied. Live-only
-application and rebuild on the base APK also succeeded. Keep the patch opt-in
-and experimental; do not imply comprehensive device/channel coverage.
+application and rebuild on the base APK also succeeded. On 2026-09-23 the user
+authorized promoting both playback patches from experimental to stable and
+default-enabled. Do not imply comprehensive device/channel coverage.
