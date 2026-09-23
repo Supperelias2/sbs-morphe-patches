@@ -1,7 +1,7 @@
 {
-  "created_at": "",
-  "description": "",
-  "download_url": "",
+  "created_at": "2026-09-23T18:41:01",
+  "description": "## 1.0.0-dev.1 (2026-09-23)\n\n### ✨ New Features\n\n* add experimental SBS direct VOD playback patch ([1f0eac4](https://github.com/Supperelias2/sbs-morphe-patches/commit/1f0eac413fb8875927c8157620f1112fc3229714))",
+  "download_url": "https://github.com/Supperelias2/sbs-morphe-patches/releases/download/v1.0.0-dev.1/patches-1.0.0-dev.1.mpp",
   "signature_download_url": "",
-  "version": ""
+  "version": "1.0.0-dev.1"
 }

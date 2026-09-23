@@ -1,91 +1,79 @@
-# 👋🧩 Morphe Patches template
+# Supperelias2 SBS Patches
 
-Template repository for Morphe Patches.
+Unofficial [Morphe](https://morphe.software) patches for SBS On Demand.
 
-## ❓ About
+[Add this source to Morphe](https://morphe.software/add-source?github=Supperelias2/sbs-morphe-patches)
+ · [Releases](https://github.com/Supperelias2/sbs-morphe-patches/releases)
+ · [Report a problem](https://github.com/Supperelias2/sbs-morphe-patches/issues)
 
-Patches for apps I like.
+## What the patch does
 
-<!-- TODO: Update this about section with a brief introduction/summary about this repo and what it offers. -->
+**Prefer direct VOD stream (experimental)** selects an Akamai HLS alternative
+already present in the app's playback response instead of Google DAI. It only
+changes on-demand playback when a non-empty alternative URL is available.
+Live playback and cases without an alternative retain the original selection.
 
-### How to use these patches
+The maintainer reports successful playback with the patch on a phone using
+SBS **6.3.0 (16435)**. This is an initial user test, not comprehensive device
+coverage. Ad-free playback is not guaranteed for every title or session.
+Location requirements are unchanged.
 
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
+## Install with Morphe Manager
 
-## 🩹 Patches list
+1. Open the source link above, or add `https://github.com/Supperelias2/sbs-morphe-patches`
+   under **Sources → + → Remote**.
+2. Enable **Experimental app versions** for this source. For dev releases,
+   enable **Pre-release patches** as well.
+3. Enable **Expert mode**, select an original SBS 6.3.0 APKM, and select
+   **Prefer direct VOD stream (experimental)**. Its compatibility check is automatic.
+4. Patch and install using Morphe Manager. A signature conflict with the official
+   app may require uninstalling that app, which removes its local data/downloads.
+5. Keep Morphe's signing key for future updates. Test start, resume, seeking,
+   midstream playback and live playback.
+
+Alternatively import the release's `.mpp` file using **Sources → + → Local**.
+Local imports need to be replaced manually for updates. Always patch an original
+app file, not an already patched APK.
+
+## Patches
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.0.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;2 patches total
+<details open>
+<summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
-     
-     If you wish for the patches list to be collapsed, then remove the word 'EXPANDED' from the comment tag above.
+**🎯 Supported versions:**
 
-     If you wish to manually keep this list updated then remove the PATCHES_START and PATCHES_END 
-     comment blocks entirely. -->
+| 🧪&nbsp;6.3.0 |
+| :---: |
 
-#### A list of your patches will automatically be shown here after your first patches release is created.
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Prefer direct VOD stream (experimental)](#prefer-direct-vod-stream-experimental) | Prefers an available Akamai VOD stream over Google DAI. Keeps original selection for live or missing alternatives. Ad removal is not guaranteed. |  |
+| [SBS playback compatibility check](#sbs-playback-compatibility-check) | Checks SBS 6.3.0 playback integration points. Does not remove advertisements. |  |
 
-&nbsp;
+</details>
 
-## 🚀 Getting development started
-
-To start using this template, follow these steps:
-
-1. [Setup](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-development/README.md) your development environment including adding a GitHub PAT as described [here](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md#-prepare-the-environment).
-2. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp). Select create a new repository, and **enable 'Include all branches'** 
-3. Enable "Allow GitHub Actions to create and approve pull requests" in your repo Settings > Actions > General > Workflow permissions
-4. Update the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the 
-   [group of the project](patches/build.gradle.kts#L1), and the [About](patches/build.gradle.kts#L6-L11))
-5. Update the [README.md](README.md) file to be specific of your repo, and update the links in the [issue templates](.github/ISSUE_TEMPLATE).
-6. Choose a name for your patches project. Keep in mind you must use a name that does not 
-   imply authorship by the Morphe open source project. If unsure, then simply name these
-   patches after yourself ("UserXYZ Morphe patches"). See the [NOTICE](NOTICE) for details. 
-7. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
-   Morphe Manager instead of your GitHub profile avatar.
-
-🎉 You are now ready to start creating patches!
-
-## 🧑‍💻 Dev usage
-
-To develop and release your Patches using this template:
-
-- **Make all changes to the `dev` branch.**
-- For local development work build your patches using the gradle task `./gradlew buildAndroid` to generate the mpp file found in `patches/build/libs/patches-*.mpp`. Apply your patches locally using Morphe Desktop tool like any other patch bundle.
-- Always use [Semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages for commits. To keep it simple use only 3 commit message types: 
-  - `feat: Added a new feature`
-  - `fix: Some problem now fixed`
-  - `chore: Random change you do not want in the user facing changelog`
-- Commits of `fix:` and `feat:` will automatically generate new pre-releases and `chore:` will not create a new release.
-- Users can apply your dev branch releases by enabling `pre-release` in Morphe Manager patch sources.
-- When your dev branch is ready, and you want a stable release, merge dev branch to main (do not squash, and only merge).
-- **Always use semantic release (release.yml)**. Do not manually upload or create releases by hand
-  because many files must be updated and release.yml handles everything.
-
-## 🤓 Tips
-- See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md) for more examples of creating patches and fingerprints.
-- Do not use AI to create new release scripts. The `release.yml` here already handles everything.
-  If you need omething custom with your releases then modify the existing `release.yml`
-  and `.releaserc` instead of writing everything new from scratch.
-- Do not manually edit or manually commit any generated files such as: `patches-list.json`,
-  `patches-bundle.json`, `CHANGELOG.md`.  These files will be automatically updated by `release.yml`.
-- Do not force push any semantic release commits as that will break all future releases.
-  If you need to fix a broken release, it's always easiest to create a new release instead of 
-  fixing an existing release.
-
-
-<!-- The patches end tag is intentionally placed here so the first release will clean up 
-     this readme of all developer instructions above. -->
 <!-- PATCHES_END -->
 
-### 🛠️ Building locally
+## Development and testing
 
-- Run `./gradlew buildAndroid`
-- The built patches .mpp file is found in `patches/build/libs/patches-*.mpp`
-- Patch the mpp file using [Morphe-Desktop](https://github.com/MorpheApp/morphe-desktop)
-  like any other patch bundle.
+Build with `./gradlew buildAndroid`. The bundle is written to
+`patches/build/libs/patches-*.mpp`. Local builds need GitHub Packages read access;
+never commit credentials. Development happens on `dev`; the existing semantic
+release workflow builds releases and updates source metadata.
 
-See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) for more information.
+Validation completed: Gradle build, application to the original APKM using
+Morphe Desktop 1.16.0, APK rebuild, and inspection of the modified DEX method.
+The maintainer subsequently reported a successful phone test.
 
-## 📜 License
+See [implementation notes](docs/sbs-playback-preparation.md). When reporting a
+problem include app/patch versions, phone and Android version, playback action
+and a sanitized patching log. Do not include account tokens or private stream URLs.
 
-UserXYZ Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+## License and affiliation
+
+Patch code is licensed under [GPLv3](LICENSE); see [NOTICE](NOTICE).
+This project is not affiliated with SBS or the Morphe project. No SBS APKs,
+decompiled app sources, account data or signing keys are distributed here.

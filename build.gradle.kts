@@ -1,1 +1,1 @@
-// Root build configuration for morphe-patches-template
+// Root build configuration for Supperelias2 SBS Patches.
