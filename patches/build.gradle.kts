@@ -1,14 +1,13 @@
-group = "app.template"
+group = "dev.supperelias2.sbs"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
-        contact = "na"
-        website = "na"
+        name = "Supperelias2 SBS Patches"
+        description = "Unofficial patches for SBS On Demand"
+        source = "https://github.com/Supperelias2/sbs-morphe-patches"
+        author = "Supperelias2"
+        contact = "https://github.com/Supperelias2/sbs-morphe-patches/issues"
+        website = "https://github.com/Supperelias2/sbs-morphe-patches"
         license = "GPLv3"
     }
 }
