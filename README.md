@@ -6,14 +6,19 @@ Unofficial [Morphe](https://morphe.software) patches for SBS On Demand.
  · [Releases](https://github.com/Supperelias2/sbs-morphe-patches/releases)
  · [Report a problem](https://github.com/Supperelias2/sbs-morphe-patches/issues)
 
-## What the patch does
+## What the patches do
 
 **Prefer direct VOD stream (experimental)** selects an Akamai HLS alternative
 already present in the app's playback response instead of Google DAI. It only
 changes on-demand playback when a non-empty alternative URL is available.
 Live playback and cases without an alternative retain the original selection.
 
-The maintainer reports successful playback with the patch on a phone using
+**Prefer direct live stream (experimental)** separately selects an available
+Akamai HLS alternative for live TV instead of Google DAI. Without a non-empty
+alternative URL it keeps the original selection. Ads in the broadcast itself
+remain; avoiding all additional inserted ads is not guaranteed.
+
+The maintainer reports successful VOD and live playback with these patches on a phone using
 SBS **6.3.0 (16435)**. This is an initial user test, not comprehensive device
 coverage. Ad-free playback is not guaranteed for every title or session.
 Location requirements are unchanged.
@@ -25,7 +30,8 @@ Location requirements are unchanged.
 2. Enable **Experimental app versions** for this source. For dev releases,
    enable **Pre-release patches** as well.
 3. Enable **Expert mode**, select an original SBS 6.3.0 APKM, and select
-   **Prefer direct VOD stream (experimental)**. Its compatibility check is automatic.
+   **Prefer direct VOD stream (experimental)** and/or
+   **Prefer direct live stream (experimental)**. The compatibility check is automatic.
 4. Patch and install using Morphe Manager. A signature conflict with the official
    app may require uninstalling that app, which removes its local data/downloads.
 5. Keep Morphe's signing key for future updates. Test start, resume, seeking,
@@ -38,9 +44,9 @@ app file, not an already patched APK.
 ## Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;2 patches total
+> **[v1.1.0-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.1.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
 <details open>
-<summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -51,6 +57,7 @@ app file, not an already patched APK.
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Prefer direct VOD stream (experimental)](#prefer-direct-vod-stream-experimental) | Prefers an available Akamai VOD stream over Google DAI. Keeps original selection for live or missing alternatives. Ad removal is not guaranteed. |  |
+| [Prefer direct live stream (experimental)](#prefer-direct-live-stream-experimental) | Prefers an available Akamai live stream over Google DAI. Broadcast ads remain. Keeps original selection when no direct stream is available. |  |
 | [SBS playback compatibility check](#sbs-playback-compatibility-check) | Checks SBS 6.3.0 playback integration points. Does not remove advertisements. |  |
 
 </details>
@@ -66,7 +73,11 @@ release workflow builds releases and updates source metadata.
 
 Validation completed: Gradle build, application to the original APKM using
 Morphe Desktop 1.16.0, APK rebuild, and inspection of the modified DEX method.
-The maintainer subsequently reported a successful phone test.
+Both patches together were applied to the original APKM and their guards and
+fallback paths inspected in the rebuilt DEX. The live patch also passed a
+standalone application/rebuild check on the base APK. The maintainer subsequently
+reported successful live playback on a phone. Broader channel/device coverage
+remains unverified.
 
 See [implementation notes](docs/sbs-playback-preparation.md). When reporting a
 problem include app/patch versions, phone and Android version, playback action
