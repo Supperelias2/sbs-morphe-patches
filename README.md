@@ -8,6 +8,16 @@ Unofficial [Morphe](https://morphe.software) patches for SBS On Demand.
 
 ## What the patches do
 
+An experimental mobile preview adds a purple **Morphe settings** row to the
+account menu, above App Settings and Language. It contains persistent toggles
+for installed patches and optional QoL experiments. Ad removal and the verified
+intro/recap correction start enabled; other experiments start disabled.
+
+Use the source's prerelease channel to test the preview. See the
+[experimental settings guide](docs/mobile-settings-experimental.md) for features,
+defaults, supported versions and phone test steps. The stable ad-removal release
+remains available independently.
+
 **Prefer direct VOD stream** removes the video ads played before and during
 on-demand videos (pre-roll and mid-roll) by using SBS's direct Akamai stream.
 
@@ -23,7 +33,8 @@ section below for 6.4.0 validation. Location requirements are unchanged.
 
 1. Open the source link above, or add `https://github.com/Supperelias2/sbs-morphe-patches`
    under **Sources → + → Remote**.
-2. Select an original SBS 6.4.0 (16659) or 6.3.0 (16435) APKM. Both playback patches are selected by
+2. Select an original SBS 6.4.0 (16659) APKM for the QoL preview. The legacy ad/menu
+   patches also support 6.3.0 (16435). Both playback patches are selected by
    default; you can disable either one if you only want VOD or live changes.
    The compatibility check is automatic.
 3. For development releases, enable **Pre-release patches** for this source.
@@ -82,8 +93,9 @@ See [implementation notes](docs/sbs-playback-preparation.md). When reporting a
 problem include app/patch versions, phone and Android version, playback action
 and a sanitized patching log. Do not include account tokens or private stream URLs.
 
-See [SBS 6.4.0 QoL research](docs/qol-research-6.4.0.md) for proposed improvements,
-verified integration points and limitations. These proposals are not implemented.
+See [SBS 6.4.0 QoL research](docs/qol-research-6.4.0.md) for the original investigation
+and the [experimental settings guide](docs/mobile-settings-experimental.md) for
+the implemented mobile subset and its validation limits.
 
 ## License and affiliation
 

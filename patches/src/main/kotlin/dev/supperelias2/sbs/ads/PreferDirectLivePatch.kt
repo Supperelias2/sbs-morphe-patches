@@ -5,6 +5,8 @@ import app.morphe.patcher.patch.ApkFileType
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
+import dev.supperelias2.sbs.morphe.registerFeature
+import dev.supperelias2.sbs.morphe.settingsPatch
 
 private const val LIVE_ITEM = "Lcom/sbs/ondemand/model/playback/PlaybackResponse\$PlaybackItem;"
 private const val LIVE_AKAMAI = "Lcom/sbs/ondemand/model/playback/PlaybackStreamProvider\$AkamaiHLSProvider;"
@@ -26,9 +28,10 @@ val preferDirectLivePatch = bytecodePatch(
             targets = listOf(AppTarget(version = "6.4.0"), AppTarget(version = "6.3.0"))
         )
     )
-    dependsOn(playbackCompatibilityPatch)
+    dependsOn(playbackCompatibilityPatch, settingsPatch)
 
     execute {
+        registerFeature("remove_live_ads")
         val method = ProviderSelectionFingerprint.method
         val fallback = FallbackProviderFingerprint.method
         check(method.implementation?.registerCount == 8) {
@@ -42,6 +45,9 @@ val preferDirectLivePatch = bytecodePatch(
         method.addInstructionsWithLabels(
             0,
             """
+                invoke-static {}, Ldev/supperelias2/sbs/morphe/features/GeneralHooks;->removeLiveAds()Z
+                move-result v0
+                if-eqz v0, :sbs_live_original
                 const-string v0, "live"
                 invoke-virtual {p1}, $LIVE_ITEM->getStreamType()Ljava/lang/String;
                 move-result-object v1

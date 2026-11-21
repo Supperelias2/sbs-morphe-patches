@@ -4,7 +4,10 @@ Research date: 2026-11-21. Inspected original, signature-verified mobile
 `com.sbs.ondemand.android` 6.4.0 (16659) and Android TV
 `com.sbs.ondemand.tv` 6.4.0 (16690).
 
-These are proposals, not implemented features. Findings come from targeted
+The original findings below describe proposals rather than device-tested features.
+A later mobile-only implementation preview is documented in the
+[experimental settings guide](mobile-settings-experimental.md); TV proposals
+remain separate. Findings come from targeted
 manifest inspection, reconstructed Java and DEX disassembly in the CLI
 workspace. The intro/recap issue was checked in raw bytecode on both apps.
 There was no device playback test or capture of account traffic. Effort ratings
