@@ -1,3 +1,9 @@
+## [1.2.1-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.2.0...v1.2.1-dev.1) (2026-11-21)
+
+### 🚀 Updated App Support
+
+* support SBS 6.4.0 and refresh build tooling ([705b2fa](https://github.com/Supperelias2/sbs-morphe-patches/commit/705b2fab1abff6df54d79044086cfaa5379a04c9))
+
 ## [1.2.0](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.1.0...v1.2.0) (2026-09-23)
 
 ### ✨ New Features

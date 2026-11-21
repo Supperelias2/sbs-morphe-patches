@@ -43,21 +43,21 @@ app file, not an already patched APK.
 ## Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.2.0](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+> **[v1.2.1-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.2.1-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
 <details open>
 <summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
 
 **🎯 Supported versions:**
 
-| 6.3.0 |
-| :---: |
+| 6.4.0 | 6.3.0 |
+| :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Prefer direct VOD stream](#prefer-direct-vod-stream) | Prefers an available Akamai VOD stream over Google DAI. Keeps original selection for live or missing alternatives. Ad removal is not guaranteed. |  |
 | [Prefer direct live stream](#prefer-direct-live-stream) | Prefers an available Akamai live stream over Google DAI. Broadcast ads remain. Keeps original selection when no direct stream is available. |  |
-| [SBS playback compatibility check](#sbs-playback-compatibility-check) | Checks SBS 6.3.0 playback integration points. Does not remove advertisements. |  |
+| [SBS playback compatibility check](#sbs-playback-compatibility-check) | Checks the supported SBS playback integration points. Does not remove advertisements. |  |
 
 </details>
 
