@@ -5,6 +5,8 @@ import app.morphe.patcher.patch.ApkFileType
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
+import dev.supperelias2.sbs.morphe.registerFeature
+import dev.supperelias2.sbs.morphe.settingsPatch
 
 private const val ITEM = "Lcom/sbs/ondemand/model/playback/PlaybackResponse\$PlaybackItem;"
 private const val AKAMAI = "Lcom/sbs/ondemand/model/playback/PlaybackStreamProvider\$AkamaiHLSProvider;"
@@ -22,12 +24,13 @@ val preferDirectVodPatch = bytecodePatch(
             packageName = "com.sbs.ondemand.android",
             apkFileType = ApkFileType.APKM,
             appIconColor = 0xDCBD1D,
-            targets = listOf(AppTarget(version = "6.4.0"), AppTarget(version = "6.3.0"))
+            targets = listOf(AppTarget(version = "6.4.0", isExperimental = true), AppTarget(version = "6.3.0"))
         )
     )
-    dependsOn(playbackCompatibilityPatch)
+    dependsOn(playbackCompatibilityPatch, settingsPatch)
 
     execute {
+        registerFeature("remove_vod_ads")
         val method = ProviderSelectionFingerprint.method
         val fallback = FallbackProviderFingerprint.method
         // Verified against the supported builds: five locals, three
@@ -40,6 +43,9 @@ val preferDirectVodPatch = bytecodePatch(
         method.addInstructionsWithLabels(
             0,
             """
+                invoke-static {}, Ldev/supperelias2/sbs/morphe/features/GeneralHooks;->removeVodAds()Z
+                move-result v0
+                if-eqz v0, :sbs_original
                 const-string v0, "vod"
                 invoke-virtual {p1}, $ITEM->getStreamType()Ljava/lang/String;
                 move-result-object v1
