@@ -82,6 +82,9 @@ See [implementation notes](docs/sbs-playback-preparation.md). When reporting a
 problem include app/patch versions, phone and Android version, playback action
 and a sanitized patching log. Do not include account tokens or private stream URLs.
 
+See [SBS 6.4.0 QoL research](docs/qol-research-6.4.0.md) for proposed improvements,
+verified integration points and limitations. These proposals are not implemented.
+
 ## License and affiliation
 
 Patch code is licensed under [GPLv3](LICENSE); see [NOTICE](NOTICE).
