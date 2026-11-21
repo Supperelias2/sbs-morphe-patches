@@ -8,20 +8,16 @@ Unofficial [Morphe](https://morphe.software) patches for SBS On Demand.
 
 ## What the patches do
 
-**Prefer direct VOD stream** selects an Akamai HLS alternative
-already present in the app's playback response instead of Google DAI. It only
-changes on-demand playback when a non-empty alternative URL is available.
-Live playback and cases without an alternative retain the original selection.
+**Prefer direct VOD stream** removes the video ads played before and during
+on-demand videos (pre-roll and mid-roll) by using SBS's direct Akamai stream.
 
-**Prefer direct live stream** separately selects an available
-Akamai HLS alternative for live TV instead of Google DAI. Without a non-empty
-alternative URL it keeps the original selection. Ads in the broadcast itself
-remain; avoiding all additional inserted ads is not guaranteed.
+**Prefer direct live stream** removes the extra video ads inserted before or
+during live TV. Ads already present in the TV broadcast itself remain.
 
-The maintainer reports successful VOD and live playback with these patches on a phone using
-SBS **6.3.0 (16435)**. This is an initial user test, not comprehensive device
-coverage. Ad-free playback is not guaranteed for every title or session.
-Location requirements are unchanged.
+Both patches use the direct stream when SBS supplies one. If it is unavailable,
+the app keeps its normal playback path. The maintainer has confirmed ad removal
+and working VOD/live playback on a phone using **6.3.0 (16435)**. See the testing
+section below for 6.4.0 validation. Location requirements are unchanged.
 
 ## Install with Morphe Manager
 

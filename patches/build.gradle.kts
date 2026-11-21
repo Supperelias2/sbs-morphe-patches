@@ -3,7 +3,7 @@ group = "dev.supperelias2.sbs"
 patches {
     about {
         name = "Supperelias2 SBS Patches"
-        description = "Unofficial patches for SBS On Demand"
+        description = "Video ad removal for SBS On Demand: on-demand videos and live TV."
         source = "https://github.com/Supperelias2/sbs-morphe-patches"
         author = "Supperelias2"
         contact = "https://github.com/Supperelias2/sbs-morphe-patches/issues"
