@@ -27,7 +27,7 @@ Location requirements are unchanged.
 
 1. Open the source link above, or add `https://github.com/Supperelias2/sbs-morphe-patches`
    under **Sources → + → Remote**.
-2. Select an original SBS 6.3.0 APKM. Both playback patches are selected by
+2. Select an original SBS 6.4.0 (16659) or 6.3.0 (16435) APKM. Both playback patches are selected by
    default; you can disable either one if you only want VOD or live changes.
    The compatibility check is automatic.
 3. For development releases, enable **Pre-release patches** for this source.
@@ -43,21 +43,21 @@ app file, not an already patched APK.
 ## Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.2.0](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+> **[v1.2.1-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.2.1-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
 <details open>
 <summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
 
 **🎯 Supported versions:**
 
-| 6.3.0 |
-| :---: |
+| 6.4.0 | 6.3.0 |
+| :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Prefer direct VOD stream](#prefer-direct-vod-stream) | Prefers an available Akamai VOD stream over Google DAI. Keeps original selection for live or missing alternatives. Ad removal is not guaranteed. |  |
 | [Prefer direct live stream](#prefer-direct-live-stream) | Prefers an available Akamai live stream over Google DAI. Broadcast ads remain. Keeps original selection when no direct stream is available. |  |
-| [SBS playback compatibility check](#sbs-playback-compatibility-check) | Checks SBS 6.3.0 playback integration points. Does not remove advertisements. |  |
+| [SBS playback compatibility check](#sbs-playback-compatibility-check) | Checks the supported SBS playback integration points. Does not remove advertisements. |  |
 
 </details>
 
@@ -77,6 +77,10 @@ fallback paths inspected in the rebuilt DEX. The live patch also passed a
 standalone application/rebuild check on the base APK. The maintainer subsequently
 reported successful live playback on a phone. Broader channel/device coverage
 remains unverified.
+
+SBS **6.4.0 (16659)** also passes the CLI patch-and-rebuild checks with both
+playback patches enabled. The 6.3.0 regression check still passes. Playback on
+a device with 6.4.0 has not yet been verified.
 
 See [implementation notes](docs/sbs-playback-preparation.md). When reporting a
 problem include app/patch versions, phone and Android version, playback action
