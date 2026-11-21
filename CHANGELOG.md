@@ -1,3 +1,13 @@
+## [1.3.0](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.2.2...v1.3.0) (2026-11-21)
+
+### 🐛 Bug Fixes
+
+* expose experimental mobile patches in regular source updates ([6196127](https://github.com/Supperelias2/sbs-morphe-patches/commit/61961279d9d1578acfc61d943aaa26ca5faa24f6))
+
+### ✨ New Features
+
+* add mobile Morphe settings and experimental playback controls ([0735c5f](https://github.com/Supperelias2/sbs-morphe-patches/commit/0735c5f1d3ecbba9c20529384218ad2baf6eb8fb))
+
 ## [1.3.0-dev.2](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.3.0-dev.1...v1.3.0-dev.2) (2026-11-21)
 
 ### 🐛 Bug Fixes

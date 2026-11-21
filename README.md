@@ -53,7 +53,7 @@ app file, not an already patched APK.
 ## Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.3.0-dev.2](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.3.0-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
+> **[v1.3.0](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.3.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
 <details open>
 <summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;19 patches</summary>
 <br>
