@@ -20,6 +20,13 @@
           "signatures": null,
           "targets": [
             {
+              "version": "6.4.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
               "version": "6.3.0",
               "versionCodes": null,
               "isExperimental": false,
@@ -49,6 +56,13 @@
           "signatures": null,
           "targets": [
             {
+              "version": "6.4.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
               "version": "6.3.0",
               "versionCodes": null,
               "isExperimental": false,
@@ -62,7 +76,7 @@
     },
     {
       "name": "SBS playback compatibility check",
-      "description": "Checks SBS 6.3.0 playback integration points. Does not remove advertisements.",
+      "description": "Checks the supported SBS playback integration points. Does not remove advertisements.",
       "default": false,
       "category": null,
       "dependencies": [],
@@ -75,6 +89,13 @@
           "appIconColor": "#DCBD1D",
           "signatures": null,
           "targets": [
+            {
+              "version": "6.4.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
             {
               "version": "6.3.0",
               "versionCodes": null,

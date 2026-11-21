@@ -27,7 +27,7 @@ Location requirements are unchanged.
 
 1. Open the source link above, or add `https://github.com/Supperelias2/sbs-morphe-patches`
    under **Sources → + → Remote**.
-2. Select an original SBS 6.3.0 APKM. Both playback patches are selected by
+2. Select an original SBS 6.4.0 (16659) or 6.3.0 (16435) APKM. Both playback patches are selected by
    default; you can disable either one if you only want VOD or live changes.
    The compatibility check is automatic.
 3. For development releases, enable **Pre-release patches** for this source.
@@ -77,6 +77,10 @@ fallback paths inspected in the rebuilt DEX. The live patch also passed a
 standalone application/rebuild check on the base APK. The maintainer subsequently
 reported successful live playback on a phone. Broader channel/device coverage
 remains unverified.
+
+SBS **6.4.0 (16659)** also passes the CLI patch-and-rebuild checks with both
+playback patches enabled. The 6.3.0 regression check still passes. Playback on
+a device with 6.4.0 has not yet been verified.
 
 See [implementation notes](docs/sbs-playback-preparation.md). When reporting a
 problem include app/patch versions, phone and Android version, playback action
