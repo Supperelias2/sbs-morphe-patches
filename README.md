@@ -50,18 +50,34 @@ app file, not an already patched APK.
 ## Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.2.2](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.2.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+> **[v1.3.0-dev.1](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.3.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;19 patches total
 <details open>
-<summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;19 patches</summary>
 <br>
 
 **🎯 Supported versions:**
 
-| 6.4.0 | 6.3.0 |
-| :---: | :---: |
+| 6.4.0 |
+| :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
+| [Experimental: automatic intro and recap skipping](#experimental-automatic-intro-and-recap-skipping) | Experimental separate opt-in VOD intro and recap skipping, once per segment and media item. |  |
+| [Experimental: binge-watching preset](#experimental-binge-watching-preset) | Adds an opt-in preset button for automatic intros/recaps, uninterrupted watching and a shorter next-episode delay. Individual switches remain available. |  |
+| [Experimental: bounded VOD buffer recovery](#experimental-bounded-vod-buffer-recovery) | Experimental opt-in restart after 25 seconds of continuous direct-VOD buffering, with at most two attempts per media session. Live, ads, DRM and player errors are excluded. |  |
+| [Experimental: clean paused picture](#experimental-clean-paused-picture) | Adds opt-in hiding of controls while paused, using the synchronized SBS visibility path. Off by default. |  |
+| [Experimental: controls timeout](#experimental-controls-timeout) | Adds an opt-in controls timeout to Morphe settings. Normal three-second behavior is preserved by default. |  |
+| [Experimental: correct intro and recap seeking](#experimental-correct-intro-and-recap-seeking) | Experimental provider-aware VOD skip correction. Enabled in Morphe settings by default. |  |
+| [Experimental: custom seek intervals](#experimental-custom-seek-intervals) | Experimental separate rewind and forward intervals for player and live controls, with matching PiP descriptions. Defaults to 15 seconds. |  |
+| [Experimental: customize subtitles](#experimental-customize-subtitles) | Adds optional subtitle size, bottom margin, and high-contrast styling to Morphe settings. Disabled at runtime by default; SBS mobile 6.4.0 only. |  |
+| [Experimental: external direct-stream player](#experimental-external-direct-stream-player) | Adds opt-in handoff of direct VOD to an installed video player. DRM content stays in SBS; session/format limitations can apply. |  |
+| [Experimental: local playback diagnostics](#experimental-local-playback-diagnostics) | Adds an opt-in provider, resolution, bitrate and buffer overlay. Does not show stream URLs or account data. |  |
+| [Experimental: next episode countdown](#experimental-next-episode-countdown) | Adds an opt-in next-episode delay preference. Original autoplay, cancel and watch-credits actions are retained. |  |
+| [Experimental: persistent VOD playback speed](#experimental-persistent-vod-playback-speed) | Experimental saved playback speed for direct VOD. Opt-in; live and Google DAI remain at normal speed. |  |
+| [Experimental: reduce telemetry](#experimental-reduce-telemetry) | Adds an off-by-default setting to suppress selected navigation, interaction and playback analytics events. SDK initialization remains enabled. |  |
+| [Experimental: remember video quality](#experimental-remember-video-quality) | Adds optional remembered bitrate, automatic, and highest-supported quality modes to Morphe settings. Disabled at runtime by default; SBS mobile 6.4.0 only. |  |
+| [Experimental: uninterrupted watching](#experimental-uninterrupted-watching) | Adds an opt-in switch to stop inactivity prompts and their player exit. Long-pause stream refresh is preserved. |  |
+| [Morphe settings](#morphe-settings) | Adds Morphe settings above App Settings and Language in the account menu. |  |
 | [Prefer direct VOD stream](#prefer-direct-vod-stream) | Removes pre-roll and mid-roll video ads by selecting SBS's direct VOD stream when available. |  |
 | [Prefer direct live stream](#prefer-direct-live-stream) | Removes extra video ads from live TV by selecting the direct stream when available. Ads in the broadcast remain. |  |
 | [SBS playback compatibility check](#sbs-playback-compatibility-check) | Verifies the playback methods required by the VOD and live ad-removal patches. |  |
