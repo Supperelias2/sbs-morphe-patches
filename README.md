@@ -39,7 +39,7 @@ app file, not an already patched APK.
 ## Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.2.1](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.2.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+> **[v1.2.2](https://github.com/Supperelias2/sbs-morphe-patches/releases/tag/v1.2.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
 <details open>
 <summary>📦 SBS On Demand&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
@@ -51,9 +51,9 @@ app file, not an already patched APK.
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Prefer direct VOD stream](#prefer-direct-vod-stream) | Prefers an available Akamai VOD stream over Google DAI. Keeps original selection for live or missing alternatives. Ad removal is not guaranteed. |  |
-| [Prefer direct live stream](#prefer-direct-live-stream) | Prefers an available Akamai live stream over Google DAI. Broadcast ads remain. Keeps original selection when no direct stream is available. |  |
-| [SBS playback compatibility check](#sbs-playback-compatibility-check) | Checks the supported SBS playback integration points. Does not remove advertisements. |  |
+| [Prefer direct VOD stream](#prefer-direct-vod-stream) | Removes pre-roll and mid-roll video ads by selecting SBS's direct VOD stream when available. |  |
+| [Prefer direct live stream](#prefer-direct-live-stream) | Removes extra video ads from live TV by selecting the direct stream when available. Ads in the broadcast remain. |  |
+| [SBS playback compatibility check](#sbs-playback-compatibility-check) | Verifies the playback methods required by the VOD and live ad-removal patches. |  |
 
 </details>
 

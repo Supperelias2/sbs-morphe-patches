@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.2.1...v1.2.2) (2026-11-21)
+
+### 🐛 Bug Fixes
+
+* clearly describe video ad removal ([7ced21b](https://github.com/Supperelias2/sbs-morphe-patches/commit/7ced21b68dfbdc6bdcb1257230012326b9d195b6))
+
 ## [1.2.1](https://github.com/Supperelias2/sbs-morphe-patches/compare/v1.2.0...v1.2.1) (2026-11-21)
 
 ### 🚀 Updated App Support
