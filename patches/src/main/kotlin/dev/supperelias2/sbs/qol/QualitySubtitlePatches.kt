@@ -61,13 +61,14 @@ val rememberVideoQualityPatch = bytecodePatch(
     description = "Adds optional remembered bitrate, automatic, and highest-supported quality modes to Morphe settings. Disabled at runtime by default; SBS mobile 6.4.0 only.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(
         Compatibility(
             name = "SBS On Demand",
             packageName = "com.sbs.ondemand.android",
             apkFileType = ApkFileType.APKM,
             appIconColor = 0xDCBD1D,
-            targets = listOf(AppTarget(version = "6.4.0"))
+            targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
         )
     )
     dependsOn(settingsPatch)
@@ -95,13 +96,14 @@ val subtitleCustomizationPatch = bytecodePatch(
     description = "Adds optional subtitle size, bottom margin, and high-contrast styling to Morphe settings. Disabled at runtime by default; SBS mobile 6.4.0 only.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(
         Compatibility(
             name = "SBS On Demand",
             packageName = "com.sbs.ondemand.android",
             apkFileType = ApkFileType.APKM,
             appIconColor = 0xDCBD1D,
-            targets = listOf(AppTarget(version = "6.4.0"))
+            targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
         )
     )
     dependsOn(settingsPatch)

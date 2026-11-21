@@ -8,15 +8,17 @@ Unofficial [Morphe](https://morphe.software) patches for SBS On Demand.
 
 ## What the patches do
 
-An experimental mobile preview adds a purple **Morphe settings** row to the
-account menu, above App Settings and Language. It contains persistent toggles
-for installed patches and optional QoL experiments. Ad removal and the verified
-intro/recap correction start enabled; other experiments start disabled.
+The regular **v1.3.0** source release adds a purple **Morphe settings** row to the
+mobile account menu, above App Settings and Language. It contains persistent
+toggles for installed patches and optional QoL experiments. Ad removal and the
+verified intro/recap correction start enabled; the extra runtime options start
+disabled.
 
-Use the source's prerelease channel to test the preview. See the
+Refresh this source normally in Morphe Manager to receive the new patches. The
+new QoL patches appear in the **Experimental** category and target mobile SBS
+**6.4.0 (16659)**. They remain experimental and still need phone testing. See the
 [experimental settings guide](docs/mobile-settings-experimental.md) for features,
-defaults, supported versions and phone test steps. The stable ad-removal release
-remains available independently.
+defaults, supported versions and test steps.
 
 **Prefer direct VOD stream** removes the video ads played before and during
 on-demand videos (pre-roll and mid-roll) by using SBS's direct Akamai stream.
@@ -33,11 +35,12 @@ section below for 6.4.0 validation. Location requirements are unchanged.
 
 1. Open the source link above, or add `https://github.com/Supperelias2/sbs-morphe-patches`
    under **Sources → + → Remote**.
-2. Select an original SBS 6.4.0 (16659) APKM for the QoL preview. The legacy ad/menu
-   patches also support 6.3.0 (16435). Both playback patches are selected by
+2. Refresh the source to load the latest regular release. Find the new QoL
+   patches in the **Experimental** category.
+3. Select an original SBS 6.4.0 (16659) APKM for the experimental QoL patches.
+   The legacy ad/menu patches also support 6.3.0 (16435). Both playback patches are selected by
    default; you can disable either one if you only want VOD or live changes.
    The compatibility check is automatic.
-3. For development releases, enable **Pre-release patches** for this source.
 4. Patch and install using Morphe Manager. A signature conflict with the official
    app may require uninstalling that app, which removes its local data/downloads.
 5. Keep Morphe's signing key for future updates. Test start, resume, seeking,
@@ -90,8 +93,8 @@ app file, not an already patched APK.
 
 Build with `./gradlew buildAndroid`. The bundle is written to
 `patches/build/libs/patches-*.mpp`. Local builds need GitHub Packages read access;
-never commit credentials. Development happens on `dev`; the existing semantic
-release workflow builds releases and updates source metadata.
+never commit credentials. Regular releases are published from `main`; the
+semantic release workflow builds releases and updates source metadata.
 
 Validation completed: Gradle build, application to the original APKM using
 Morphe Desktop 1.16.0, APK rebuild, and inspection of the modified DEX method.
@@ -104,6 +107,10 @@ remains unverified.
 SBS **6.4.0 (16659)** also passes the CLI patch-and-rebuild checks with both
 playback patches enabled. The 6.3.0 regression check still passes. Playback on
 a device with 6.4.0 has not yet been verified.
+
+The 6.4.0 build with the experimental QoL patches also passes the CLI rebuild,
+runtime policy fixtures and inspection of the emitted hooks. The new settings
+screen and experimental playback options have not been tested in a device GUI.
 
 See [implementation notes](docs/sbs-playback-preparation.md). When reporting a
 problem include app/patch versions, phone and Android version, playback action

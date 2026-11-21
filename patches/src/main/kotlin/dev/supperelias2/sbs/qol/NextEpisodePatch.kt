@@ -43,10 +43,11 @@ val nextEpisodeCountdownPatch = bytecodePatch(
     description = "Adds an opt-in next-episode delay preference. Original autoplay, cancel and watch-credits actions are retained.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(Compatibility(
         name = "SBS On Demand", packageName = "com.sbs.ondemand.android",
         apkFileType = ApkFileType.APKM, appIconColor = 0xDCBD1D,
-        targets = listOf(AppTarget(version = "6.4.0"))
+        targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
     ))
     dependsOn(settingsPatch)
     execute {

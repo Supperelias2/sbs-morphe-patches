@@ -20,7 +20,7 @@ private const val PLAYER_VM = "Lcom/sbs/ondemand/player/viewmodels/PlayerViewMod
 private val controlsMobile640 = Compatibility(
     name = "SBS On Demand", packageName = "com.sbs.ondemand.android",
     apkFileType = ApkFileType.APKM, appIconColor = 0xDCBD1D,
-    targets = listOf(AppTarget(version = "6.4.0"))
+    targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
 )
 
 private val controlsDelay = Fingerprint(
@@ -37,6 +37,7 @@ val controlsTimeoutPatch = bytecodePatch(
     description = "Adds an opt-in controls timeout to Morphe settings. Normal three-second behavior is preserved by default.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(controlsMobile640)
     dependsOn(settingsPatch)
     execute {
@@ -62,6 +63,7 @@ val cleanPauseControlsPatch = bytecodePatch(
     description = "Adds opt-in hiding of controls while paused, using the synchronized SBS visibility path. Off by default.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(controlsMobile640)
     dependsOn(settingsPatch)
     execute {
@@ -78,6 +80,7 @@ val stillWatchingPatch = bytecodePatch(
     description = "Adds an opt-in switch to stop inactivity prompts and their player exit. Long-pause stream refresh is preserved.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(controlsMobile640)
     dependsOn(settingsPatch)
     execute {

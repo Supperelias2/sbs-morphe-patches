@@ -17,7 +17,7 @@ private const val MANAGER_DIAGNOSTICS = "Lcom/sbs/ondemand/player/viewmodels/Pla
 private val diagnosticsMobile640 = Compatibility(
     name = "SBS On Demand", packageName = "com.sbs.ondemand.android",
     apkFileType = ApkFileType.APKM, appIconColor = 0xDCBD1D,
-    targets = listOf(AppTarget(version = "6.4.0"))
+    targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
 )
 
 @Suppress("unused")
@@ -26,6 +26,7 @@ val diagnosticsOverlayPatch = bytecodePatch(
     description = "Adds an opt-in provider, resolution, bitrate and buffer overlay. Does not show stream URLs or account data.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(diagnosticsMobile640)
     dependsOn(settingsPatch)
     execute {
@@ -68,6 +69,7 @@ val externalPlayerPatch = bytecodePatch(
     description = "Adds opt-in handoff of direct VOD to an installed video player. DRM content stays in SBS; session/format limitations can apply.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(diagnosticsMobile640)
     dependsOn(settingsPatch, externalPlayerVisibilityPatch)
     execute {

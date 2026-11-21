@@ -1,7 +1,10 @@
 # Experimental mobile Morphe settings
 
-This preview targets the mobile package `com.sbs.ondemand.android`. The Android
-TV repository and TV package are not changed by this work.
+The regular **v1.3.0** source release includes these experimental settings for
+the mobile package `com.sbs.ondemand.android`. Refresh the source normally in
+Morphe Manager; the new QoL patches appear in the **Experimental** category.
+The new experiments target mobile **6.4.0 (16659)** and still require phone
+validation. The Android TV repository and TV package are not changed by this work.
 
 ## Open the menu
 
@@ -16,9 +19,11 @@ Reset restores the defaults without changing the installed-patch list.
 
 ## Patch selection versus runtime settings
 
-The experimental patches are separately selectable in Morphe Manager. They are
-selected by default so an APK can include all implementations once. This does
-**not** enable every feature during playback: the switches below control that.
+The experimental patches are separately selectable in Morphe Manager's
+**Experimental** category. They are selected by default so an APK can include
+all implementations once. The extra runtime options start **off**; ad removal
+and the intro/recap correction start **on**. The switches below control playback
+behavior independently of patch selection.
 
 For mobile **6.4.0 (16659)**:
 
@@ -28,7 +33,7 @@ For mobile **6.4.0 (16659)**:
 | Remove live ads | On | Removes extra inserted ads; broadcast ads remain. |
 | Correct intro/recap seeking | On | Provider-aware content/DAI time mapping and marker checks. |
 | Automatically skip intros / recaps | Off | Separate switches; valid markers required; once per media/segment. |
-| Preferred video quality | Off | Remember a semantic bitrate ceiling or prefer highest offered quality. |
+| Preferred video quality | Off | Remember a semantic bitrate ceiling or prefer highest supported quality. |
 | Custom rewind / forward intervals | Off | Default is the existing 15-second behavior. |
 | Subtitle appearance | Off | Size, margin and optional high-contrast styling. |
 | VOD speed | Off | Saved speed for direct VOD; live/DAI remain normal. |
@@ -54,7 +59,7 @@ controls do not appear on 6.3.0.
 ## Deliberate limits
 
 - TV-specific channel-zapping, remote input filtering and TV drawer/start-page
-  changes are not included in this mobile preview.
+  changes are not included in this mobile patch set.
 - No patch supplies missing intro metadata, higher server renditions, regional
   access or offline licenses.
 - External players may not support a session's media format or authentication.
@@ -67,8 +72,8 @@ controls do not appear on 6.3.0.
 ## Verification and test on a phone
 
 The build is CLI-only. Runtime JVM fixtures exercise the actual production
-policy helpers with synthetic app objects/Android APIs; they are not Android UI
-or device playback tests. They cover time mapping, stale managers, marker
+policy helpers with synthetic app objects and Android API stubs; they are not
+Android UI or device playback tests. They cover time mapping, stale managers, marker
 validation, once-per-media skipping, seek/speed policy, quality persistence,
 preference types/defaults, installed-feature registration, reset and presets.
 
@@ -77,7 +82,8 @@ its emitted menu/manifest/playback hooks independently inspected. The 6.3.0
 legacy ad/menu build is checked separately. No APKs or decompiled app sources
 are committed.
 
-Before treating this preview as stable, test on a phone:
+The new settings screen and experimental playback options have not been tested
+in a device GUI. Phone validation is still required:
 
 1. Open the purple account row, change a setting, leave/reopen, and restart the
    app to verify persistence. Reset should restore the defaults.

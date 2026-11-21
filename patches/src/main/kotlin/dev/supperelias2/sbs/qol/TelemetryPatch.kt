@@ -65,12 +65,13 @@ val reduceTelemetryPatch = bytecodePatch(
     description = "Adds an off-by-default setting to suppress selected navigation, interaction and playback analytics events. SDK initialization remains enabled.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(Compatibility(
         name = "SBS On Demand",
         packageName = "com.sbs.ondemand.android",
         apkFileType = ApkFileType.APKM,
         appIconColor = 0xDCBD1D,
-        targets = listOf(AppTarget(version = "6.4.0"))
+        targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
     ))
     dependsOn(settingsPatch)
 

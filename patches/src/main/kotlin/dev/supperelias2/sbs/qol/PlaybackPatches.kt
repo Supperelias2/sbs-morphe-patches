@@ -32,7 +32,7 @@ private val mobile640 = Compatibility(
     packageName = "com.sbs.ondemand.android",
     apkFileType = ApkFileType.APKM,
     appIconColor = 0xDCBD1D,
-    targets = listOf(AppTarget(version = "6.4.0"))
+    targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
 )
 
 private class PlaybackMethod(owner: String, methodName: String, args: List<String> = emptyList()) :
@@ -123,6 +123,7 @@ val correctDirectSkipPatch = bytecodePatch(
     description = "Experimental provider-aware VOD skip correction. Enabled in Morphe settings by default.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(mobile640)
     dependsOn(settingsPatch)
     execute {
@@ -138,6 +139,7 @@ val autoSkipPatch = bytecodePatch(
     description = "Experimental separate opt-in VOD intro and recap skipping, once per segment and media item.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(mobile640)
     dependsOn(settingsPatch, correctDirectSkipPatch)
     execute {
@@ -154,6 +156,7 @@ val customSeekIntervalsPatch = bytecodePatch(
     description = "Experimental separate rewind and forward intervals for player and live controls, with matching PiP descriptions. Defaults to 15 seconds.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(mobile640)
     dependsOn(settingsPatch)
     execute {
@@ -199,6 +202,7 @@ val persistentPlaybackSpeedPatch = bytecodePatch(
     description = "Experimental saved playback speed for direct VOD. Opt-in; live and Google DAI remain at normal speed.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(mobile640)
     dependsOn(settingsPatch)
     execute {

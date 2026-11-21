@@ -33,12 +33,13 @@ val boundedBufferRecoveryPatch = bytecodePatch(
     description = "Experimental opt-in restart after 25 seconds of continuous direct-VOD buffering, with at most two attempts per media session. Live, ads, DRM and player errors are excluded.",
     default = true
 ) {
+    category("Experimental")
     compatibleWith(Compatibility(
         name = "SBS On Demand",
         packageName = "com.sbs.ondemand.android",
         apkFileType = ApkFileType.APKM,
         appIconColor = 0xDCBD1D,
-        targets = listOf(AppTarget(version = "6.4.0"))
+        targets = listOf(AppTarget(version = "6.4.0", isExperimental = true))
     ))
     dependsOn(settingsPatch)
     execute {
